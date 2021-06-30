@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane prefHeight="600.0" prefWidth="800.0" styleClass="grid" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LoginController">
+    <stylesheets>
+        <URL value="@styles/stylesheet.css" />
+    </stylesheets>
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <Pane prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <Label layoutX="368.0" layoutY="20.0" text="Login">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="username" layoutX="200.0" layoutY="200.0" prefHeight="30.0" prefWidth="400.0" promptText="Benutzername" styleClass="username"/>
+                <PasswordField fx:id="password" layoutX="200.0" layoutY="260.0" prefHeight="30.0" prefWidth="400.0" promptText="Passwort" styleClass="password" />
+                <Button fx:id="LoginBtn" layoutX="200.0" layoutY="340.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="180.0" styleClass="loginBtn" text="Login">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="quitBtn" layoutX="420.0" layoutY="340.0" mnemonicParsing="false" onAction="#quit" prefHeight="30.0" prefWidth="180.0" styleClass="cancelBtn" text="Beenden">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+    </children>
+</GridPane>

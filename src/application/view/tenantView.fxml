@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<GridPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1"
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TenantController">
+    <stylesheets>
+        <URL value="@styles/stylesheet.css"/>
+    </stylesheets>
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+    <children>
+        <Pane prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <Label layoutX="294.0" layoutY="14.0" text="Mieter Verwaltung">
+                    <font>
+                        <Font name="System Bold" size="24.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="surname" layoutX="30" layoutY="70.0" prefHeight="30.0" prefWidth="162.5" promptText="Name"/>
+                <TextField fx:id="name" layoutX="225.5" layoutY="70.0" prefHeight="30.0" prefWidth="162.5" promptText="Vorname"/>
+                <ComboBox fx:id="gender" layoutX="420.0" layoutY="70.0" prefHeight="30.0" prefWidth="86.25" promptText="Anrede">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Herr" />
+                            <String fx:value="Frau" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+                <TextField fx:id="email" layoutX="535.0" layoutY="70.0" prefHeight="30.0" prefWidth="172.5" promptText="E-Mail"/>
+                <Label layoutX="30.0" layoutY="130.0" text="Notizen:">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <TextArea fx:id="notes" layoutX="30.0" layoutY="150.0" prefHeight="60.0" prefWidth="740.0"/>
+                <ListView fx:id="tenantList" layoutX="30.0" layoutY="250.0"
+                          prefHeight="250.0" prefWidth="740.0"/>
+                <Button fx:id="saveBtn" layoutX="30.0" layoutY="540.0" mnemonicParsing="false" prefHeight="30.0"
+                        prefWidth="162.5" text="Speichern">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="cancelBtn" layoutX="223.0" layoutY="540.0" mnemonicParsing="false" prefHeight="30.0"
+                        prefWidth="162.5" text="Abbrechen">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="deleteBtn" disable="true" layoutX="415.0" layoutY="540.0" mnemonicParsing="false"
+                        prefHeight="30.0" prefWidth="162.5" text="Löschen">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="dashboardBtn" layoutX="608.0" layoutY="540.0" mnemonicParsing="false"
+                        onAction="#dashboard" prefHeight="30.0" prefWidth="162.5" text="Dashboard">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Button>
+                <Label fx:id="errorText" layoutX="262.0" layoutY="504.0" textFill="RED">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </children>
+</GridPane>
